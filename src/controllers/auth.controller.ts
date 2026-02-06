@@ -10,7 +10,7 @@ export const signin = async (req: Request, res:Response): Promise<void> => {
         const {email, password}= req.body;
         const user = await User.findOne({email});
 
-        // check apakah usernya da atau tidak
+        // check apakah usernya ada atau tidak
         if(!user){
             res.status(400).json({message: "Invalid Credentials, Email not found"})
             return;
